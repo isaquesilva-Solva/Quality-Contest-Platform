@@ -1,10 +1,20 @@
+/* Importação da fonte */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Padrão Tailwind v3 (O que a Vercel entende) */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
+  --background: 210 20% 98%;
+  --foreground: 220 20% 15%;
   --primary: 24 95% 48%;
   --radius: 0.5rem;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
 }
