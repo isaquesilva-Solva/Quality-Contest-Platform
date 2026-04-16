@@ -1,22 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: 210 20% 98%;
-  --foreground: 220 20% 15%;
-  --card: 0 0% 100%;
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
   --primary: 24 95% 48%;
-  --primary-foreground: 0 0% 100%;
-  --border: 215 20% 87%;
   --radius: 0.5rem;
-}
-
-@layer base {
-  body {
-    @apply font-sans antialiased bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
-  }
 }
