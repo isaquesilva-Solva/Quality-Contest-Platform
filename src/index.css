@@ -2,88 +2,88 @@
 
 :root {
   --primary: #f97316;
-  --primary-light: #fff7ed;
-  --bg: #fdfcfb;
-  --card-bg: #ffffff;
-  --border: #e2e8f0;
-  --text-main: #1e293b;
-  --text-muted: #64748b;
+  --primary-hover: #ea580c;
+  --bg-page: #f8fafc;
+  --border-color: #e2e8f0;
 }
 
 body {
   font-family: 'Inter', sans-serif !important;
-  background-color: var(--bg);
-  color: var(--text-main);
+  background-color: var(--bg-page) !important;
+  color: #1e293b !important;
   margin: 0;
-  padding: 40px 20px;
-  display: flex;
-  justify-content: center;
+  padding: 40px 15px;
+  line-height: 1.5;
 }
 
-/* Container Principal */
+/* Centraliza o conteúdo e dá respiro nas laterais */
 #root > div {
-  max-width: 800px;
-  width: 100%;
+  max-width: 850px !important;
+  margin: 0 auto !important;
 }
 
-/* Cabeçalho Laranja */
-header, .header-container {
-  background-color: var(--primary-light);
-  border: 1px solid #fed7aa;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Cards (Os blocos brancos) */
-section, .card, div[class*="bg-white"] {
-  background: var(--card-bg) !important;
-  border: 1px solid var(--border) !important;
-  border-radius: 16px !important;
-  padding: 32px !important;
-  margin-bottom: 24px !important;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
-}
-
-/* Estilo dos Inputs e Selects */
-input, select, textarea {
-  background-color: #f8fafc !important;
-  border: 1px solid var(--border) !important;
-  border-radius: 8px !important;
-  padding: 12px !important;
-  font-size: 15px !important;
-  margin-top: 8px !important;
-  color: var(--text-main) !important;
-}
-
-/* Labels e Títulos */
-label, h3 {
-  font-weight: 600 !important;
-  font-size: 14px !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.025em !important;
-  color: var(--text-main) !important;
-}
-
-/* Alerta de Boas Práticas (O box laranja claro) */
-div[class*="bg-orange-50"], .info-box {
-  background-color: var(--primary-light) !important;
+/* Ajuste do Header (Título) */
+div[class*="bg-orange-50/50"], header {
   border: 1px solid #fed7aa !important;
-  color: #9a3412 !important;
-  padding: 16px !important;
-  border-radius: 8px !important;
+  padding: 24px !important;
+  border-radius: 12px !important;
+  margin-bottom: 30px !important;
+  background-color: #fff7ed !important;
 }
 
-/* Botões */
+/* CARDS BRANCOS - Isso vai dar a cara do Replit */
+section, div[class*="rounded-lg border bg-card"] {
+  background: #ffffff !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 12px !important;
+  padding: 30px !important; /* Espaço interno para não ficar colado */
+  margin-bottom: 25px !important; /* Espaço entre um bloco e outro */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+}
+
+/* Espaçamento entre os títulos e os campos */
+h2, h3, .text-lg {
+  margin-bottom: 15px !important;
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+/* Ajuste dos Inputs (Campos de preenchimento) */
+input, select, textarea {
+  height: 45px !important;
+  margin-top: 8px !important;
+  margin-bottom: 5px !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  padding: 0 12px !important;
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  width: 100% !important;
+}
+
+/* Botões - Para pararem de flutuar e atropelar o texto */
 button {
   background-color: var(--primary) !important;
   color: white !important;
-  border-radius: 8px !important;
   padding: 10px 20px !important;
+  border-radius: 8px !important;
   font-weight: 600 !important;
   border: none !important;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 10px !important;
+}
+
+button:hover {
+  background-color: var(--primary-hover) !important;
+}
+
+/* Box de informações (Boas práticas) */
+div[class*="bg-orange-50"] {
+  padding: 20px !important;
+  border-radius: 10px !important;
+  border: 1px solid #ffedd5 !important;
+  margin: 15px 0 !important;
 }
