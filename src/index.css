@@ -1,32 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Injeção de estilo manual - Independente de Tailwind */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --primary: #f97316; /* Laranja da marca */
+  --bg: #f8fafc;
+  --text: #1e293b;
+  --border: #e2e8f0;
+}
 
-@layer base {
-  :root {
-    --background: 210 20% 98%;
-    --foreground: 222.2 84% 4.9%;
-    --primary: 24 95% 48%;
-    --primary-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 24 95% 48%;
-    --radius: 0.5rem;
-  }
+body {
+  font-family: 'Inter', sans-serif !important;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 20px;
+}
 
-  body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', sans-serif !important;
-  }
+/* Estilizando os campos para ficarem profissionais */
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
 
-  /* Força o estilo profissional nos botões e inputs */
-  button, input, select, textarea {
-    @apply border-border rounded-md shadow-sm;
-  }
-  
-  .primary-button {
-    @apply bg-primary text-primary-foreground hover:opacity-90;
-  }
+/* Estilizando os botões */
+button {
+  background-color: var(--primary);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Estilizando os cards */
+div[class*="bg-white"], .card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border: 1px solid var(--border);
+}
+
+h1, h2, h3 {
+  color: #0f172a;
 }
