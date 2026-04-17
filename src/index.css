@@ -2,9 +2,8 @@
 
 :root {
   --primary: #f97316;
-  --primary-hover: #ea580c;
   --bg-page: #f8fafc;
-  --border-color: #e2e8f0;
+  --border: #e2e8f0;
 }
 
 body {
@@ -12,78 +11,65 @@ body {
   background-color: var(--bg-page) !important;
   color: #1e293b !important;
   margin: 0;
-  padding: 40px 15px;
-  line-height: 1.5;
+  padding: 40px 20px;
 }
 
-/* Centraliza o conteúdo e dá respiro nas laterais */
 #root > div {
-  max-width: 850px !important;
+  max-width: 900px !important;
   margin: 0 auto !important;
 }
 
-/* Ajuste do Header (Título) */
-div[class*="bg-orange-50/50"], header {
+/* CARDS BRANCOS */
+section, div[class*="rounded-lg border bg-card"] {
+  background: white !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+  padding: 30px !important;
+  margin-bottom: 24px !important;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05) !important;
+}
+
+/* COLOCAR CAMPOS LADO A LADO (GRID) */
+div[class*="grid"], .grid-container {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important; /* Cria duas colunas */
+  gap: 20px !important;
+  margin-bottom: 15px !important;
+}
+
+/* Ajuste de inputs para não ficarem laranjas por padrão */
+select, input, textarea {
+  width: 100% !important;
+  height: 42px !important;
+  background: #ffffff !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 6px !important;
+  padding: 0 12px !important;
+  color: #1e293b !important;
+  appearance: none !important; /* Remove estilos estranhos de browser */
+}
+
+/* Corrigindo botões que deveriam ser apenas campos */
+button[class*="bg-orange"], .orange-btn {
+  background-color: var(--primary) !important;
+  border: none !important;
+  color: white !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+}
+
+/* Ajuste do Header */
+header, div[class*="bg-orange-50/50"] {
+  background-color: #fff7ed !important;
   border: 1px solid #fed7aa !important;
   padding: 24px !important;
   border-radius: 12px !important;
   margin-bottom: 30px !important;
-  background-color: #fff7ed !important;
 }
 
-/* CARDS BRANCOS - Isso vai dar a cara do Replit */
-section, div[class*="rounded-lg border bg-card"] {
-  background: #ffffff !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 12px !important;
-  padding: 30px !important; /* Espaço interno para não ficar colado */
-  margin-bottom: 25px !important; /* Espaço entre um bloco e outro */
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
-}
-
-/* Espaçamento entre os títulos e os campos */
-h2, h3, .text-lg {
-  margin-bottom: 15px !important;
-  color: #0f172a !important;
-  font-weight: 700 !important;
-}
-
-/* Ajuste dos Inputs (Campos de preenchimento) */
-input, select, textarea {
-  height: 45px !important;
-  margin-top: 8px !important;
-  margin-bottom: 5px !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 8px !important;
-  padding: 0 12px !important;
-  background-color: #ffffff !important;
-  color: #1e293b !important;
-  width: 100% !important;
-}
-
-/* Botões - Para pararem de flutuar e atropelar o texto */
-button {
-  background-color: var(--primary) !important;
-  color: white !important;
-  padding: 10px 20px !important;
-  border-radius: 8px !important;
-  font-weight: 600 !important;
-  border: none !important;
-  cursor: pointer !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 8px !important;
+/* Respiro para as listas */
+ul, ol {
   margin-top: 10px !important;
-}
-
-button:hover {
-  background-color: var(--primary-hover) !important;
-}
-
-/* Box de informações (Boas práticas) */
-div[class*="bg-orange-50"] {
-  padding: 20px !important;
-  border-radius: 10px !important;
-  border: 1px solid #ffedd5 !important;
-  margin: 15px 0 !important;
+  padding-left: 20px !important;
 }
