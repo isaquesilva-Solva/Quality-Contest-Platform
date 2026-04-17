@@ -11,65 +11,77 @@ body {
   background-color: var(--bg-page) !important;
   color: #1e293b !important;
   margin: 0;
-  padding: 40px 20px;
+  padding: 40px 10px;
+  display: flex;
+  justify-content: center;
 }
 
-#root > div {
-  max-width: 900px !important;
-  margin: 0 auto !important;
+#root {
+  width: 100%;
+  max-width: 850px;
 }
 
-/* CARDS BRANCOS */
-section, div[class*="rounded-lg border bg-card"] {
-  background: white !important;
-  border: 1px solid var(--border) !important;
-  border-radius: 12px !important;
-  padding: 30px !important;
-  margin-bottom: 24px !important;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05) !important;
-}
-
-/* COLOCAR CAMPOS LADO A LADO (GRID) */
-div[class*="grid"], .grid-container {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important; /* Cria duas colunas */
-  gap: 20px !important;
-  margin-bottom: 15px !important;
-}
-
-/* Ajuste de inputs para não ficarem laranjas por padrão */
-select, input, textarea {
-  width: 100% !important;
-  height: 42px !important;
-  background: #ffffff !important;
-  border: 1px solid var(--border) !important;
-  border-radius: 6px !important;
-  padding: 0 12px !important;
-  color: #1e293b !important;
-  appearance: none !important; /* Remove estilos estranhos de browser */
-}
-
-/* Corrigindo botões que deveriam ser apenas campos */
-button[class*="bg-orange"], .orange-btn {
-  background-color: var(--primary) !important;
-  border: none !important;
-  color: white !important;
-  padding: 8px 16px !important;
-  border-radius: 6px !important;
-  font-weight: 500 !important;
-}
-
-/* Ajuste do Header */
-header, div[class*="bg-orange-50/50"] {
+/* HEADER - Caixa de título */
+div[class*="bg-orange-50/50"], header {
   background-color: #fff7ed !important;
   border: 1px solid #fed7aa !important;
-  padding: 24px !important;
+  padding: 30px !important;
   border-radius: 12px !important;
-  margin-bottom: 30px !important;
+  margin-bottom: 24px !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
 }
 
-/* Respiro para as listas */
-ul, ol {
-  margin-top: 10px !important;
-  padding-left: 20px !important;
+/* CARDS BRANCOS - Forçando a envolver o conteúdo */
+section, div[class*="rounded-lg border bg-card"], .card-content {
+  background: #ffffff !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+  padding: 35px !important;
+  margin-top: 20px !important;
+  margin-bottom: 30px !important;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05) !important;
+  display: block !important;
+  overflow: hidden;
+}
+
+/* TÍTULOS DAS SEÇÕES */
+h2, h3, .text-xl {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+  margin-bottom: 20px !important;
+  display: block !important;
+}
+
+/* INPUTS E SELECTS MAIS ELEGANTES */
+select, input, textarea {
+  width: 100% !important;
+  min-height: 44px !important;
+  background: #ffffff !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  padding: 0 12px !important;
+  margin-bottom: 15px !important;
+  font-size: 15px !important;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.02) !important;
+}
+
+/* BOTÃO DE GESTOR E OUTROS */
+button {
+  background-color: var(--primary) !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  box-shadow: 0 2px 4px rgba(249, 115, 22, 0.2) !important;
+  cursor: pointer !important;
+}
+
+/* BOX DE BOAS PRÁTICAS */
+div[class*="bg-orange-50"] {
+  border: 1px solid #ffedd5 !important;
+  background-color: #fffaf5 !important;
+  padding: 20px !important;
+  border-radius: 10px !important;
+  margin: 20px 0 !important;
 }
