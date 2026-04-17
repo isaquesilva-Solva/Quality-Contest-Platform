@@ -30,7 +30,7 @@ header, div[class*="bg-orange-50/50"] {
   margin-bottom: 30px !important;
 }
 
-/* SEÇÕES (CARDS) - Isso vai consertar o "Identificação do Time" */
+/* SEÇÕES (CARDS) */
 section, div[class*="rounded-lg border bg-card"] {
   background: white !important;
   border: 1px solid var(--border) !important;
@@ -39,10 +39,11 @@ section, div[class*="rounded-lg border bg-card"] {
   margin-bottom: 24px !important;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05) !important;
   display: block !important;
-  clear: both !important; /* Impede que elementos de cima entrem aqui */
+  position: relative !important;
+  overflow: hidden !important;
 }
 
-/* BOX DE BOAS PRÁTICAS (O alerta laranja) */
+/* BOX DE BOAS PRÁTICAS */
 div[class*="bg-orange-50"] {
   background-color: #fffaf5 !important;
   border: 1px solid #ffedd5 !important;
@@ -51,45 +52,59 @@ div[class*="bg-orange-50"] {
   margin-bottom: 20px !important;
 }
 
-/* LABELS E TEXTOS DE ORIENTAÇÃO */
-label, .text-sm {
+/* LABELS E TEXTOS */
+label, .text-sm, .text-xs {
   display: block !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 6px !important;
   font-weight: 600 !important;
   color: #334155 !important;
 }
 
-/* INPUTS E SELECTS - Consertando o desalinhamento */
+/* INPUTS E SELECTS - Correção de tamanho e cor */
 select, input, textarea {
   width: 100% !important;
-  min-height: 45px !important;
+  min-height: 42px !important;
   background: #ffffff !important;
   border: 1px solid var(--border) !important;
   border-radius: 8px !important;
   padding: 0 12px !important;
   font-size: 15px !important;
-  margin-top: 5px !important;
-  margin-bottom: 10px !important;
+  margin-top: 4px !important;
+  margin-bottom: 12px !important;
+  color: #1e293b !important;
   box-sizing: border-box !important;
+  appearance: auto !important; /* Devolve a setinha do select */
 }
 
-/* BOTÕES */
+/* BOTÕES REAIS */
 button {
   background-color: var(--primary) !important;
   color: white !important;
-  padding: 10px 20px !important;
+  padding: 8px 16px !important;
   border-radius: 8px !important;
   font-weight: 600 !important;
   border: none !important;
   cursor: pointer !important;
-  transition: all 0.2s !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: auto !important;
+  min-width: 100px !important;
 }
 
-button:hover {
-  opacity: 0.9 !important;
+/* CORREÇÃO PARA COMPONENTES QUE ESTÃO VIRANDO BOTÕES LARANJAS SEM QUERER */
+div[role="combobox"], div[class*="inline-flex"] button {
+  width: auto !important;
+  min-height: unset !important;
 }
 
-/* AJUSTE PARA O BOTÃO "GESTOR" E OUTROS QUE ESTÃO VOANDO */
-div[class*="flex"] {
+/* ÍCONES */
+svg {
+  flex-shrink: 0 !important;
+}
+
+/* AJUSTE DE ESPAÇAMENTO PARA O TEXTO NÃO FICAR GRUDADO NOS BOTÕES */
+.flex, div[class*="flex"] {
   gap: 12px !important;
+  align-items: center !important;
 }
